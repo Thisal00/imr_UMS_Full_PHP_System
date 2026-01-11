@@ -4,8 +4,8 @@ require_once 'auth.php';
 require_login();
 
 $msg = '';
-if (isset($_GET['ok'])) $msg = "✅ Reading & Bill created successfully!";
-if (isset($_GET['err'])) $msg = "❌ Error saving reading. Check inputs.";
+if (isset($_GET['ok'])) $msg = " Reading & Bill created successfully!";
+if (isset($_GET['err'])) $msg = " Error saving reading. Check inputs.";
 
 /* LOAD METERS */
 $meters = $mysqli->query("
@@ -46,7 +46,7 @@ include 'header.php';
 
 <div class="row">
 
-<!-- ====================== LEFT SIDE (FORM) ====================== -->
+<!--  LEFT SIDE (FORM) -->
 <div class="col-md-5">
     <div class="card-glass">
         <div class="card-header-custom">
@@ -107,7 +107,7 @@ include 'header.php';
     </div>
 </div>
 
-<!-- ====================== RIGHT SIDE (TABLE) ====================== -->
+<!--  RIGHT SIDE (TABLE) -->
 <div class="col-md-7">
     <div class="card-glass">
         <div class="card-header-custom" style="background: #212529;">
@@ -176,7 +176,7 @@ include 'header.php';
 <?php include 'reading_adv/delete_modal.php'; ?>
 
 <script>
-// ============= LOAD LAST READING + TARIFFS =============
+// LOAD LAST READING + TARIFFS 
 document.getElementById("meterSelect").addEventListener("change", async function() {
     let id = this.value;
     if (!id) return;
@@ -200,7 +200,7 @@ document.getElementById("meterSelect").addEventListener("change", async function
     });
 });
 
-// ============= AUTO UNITS =============
+// LOAD AUTO UNITS 
 document.getElementById("currReading").addEventListener("input", function() {
     let prev = parseFloat(document.getElementById("prevReading").value || 0);
     let curr = parseFloat(this.value || 0);
@@ -209,7 +209,7 @@ document.getElementById("currReading").addEventListener("input", function() {
     document.getElementById("unitsField").value = diff >= 0 ? diff.toFixed(2) : "ERR";
 });
 
-// ============= EDIT BUTTON =============
+//  EDIT BUTTON 
 document.addEventListener("click", async function(e) {
     if (e.target.closest(".editBtn")) {
         let id = e.target.closest(".editBtn").dataset.id;
@@ -225,7 +225,7 @@ document.addEventListener("click", async function(e) {
     }
 });
 
-// ============= DELETE BUTTON =============
+//  DELETE BUTTON 
 document.addEventListener("click", function(e) {
     if (e.target.closest(".deleteBtn")) {
         let id = e.target.closest(".deleteBtn").dataset.id;
@@ -234,7 +234,7 @@ document.addEventListener("click", function(e) {
     }
 });
 
-// ============= DELETE CONFIRM =============
+//  DELETE CONFIRM 
 document.getElementById("confirmDeleteBtn").addEventListener("click", async function () {
 
     let id = document.getElementById("delete_id").value;

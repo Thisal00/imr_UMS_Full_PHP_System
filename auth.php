@@ -3,14 +3,6 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-<<<<<<< HEAD
-function require_login() {
-    if (empty($_SESSION['user_id'])) {
-        header('Location: index.php');
-        exit;
-    }
-}
-=======
 /*
 -------------------------------------------
  BASIC LOGIN CHECK
@@ -67,5 +59,4 @@ function is_admin() {
     return (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin');
 }
 
->>>>>>> a4f0209b59c4af18294f38748355eedcf6b22341
 ?>

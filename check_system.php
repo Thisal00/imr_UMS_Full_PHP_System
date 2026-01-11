@@ -9,9 +9,9 @@ echo "<hr>";
 // 1. Check DB connection
 echo "<h3>1. Database Connection</h3>";
 if ($mysqli) {
-    echo "✅ Database connected successfully<br>";
+    echo " Database connected successfully<br>";
 } else {
-    echo "❌ Database connection failed<br>";
+    echo " Database connection failed<br>";
     exit;
 }
 
@@ -19,47 +19,47 @@ if ($mysqli) {
 echo "<h3>2. Tariffs Table Status</h3>";
 $result = $mysqli->query("SHOW TABLES LIKE 'tariffs'");
 if ($result && $result->num_rows > 0) {
-    echo "✅ Tariffs table EXISTS<br>";
+    echo " Tariffs table EXISTS<br>";
     
     // Get table info
     $countResult = $mysqli->query("SELECT COUNT(*) as cnt FROM tariffs");
     $count = $countResult->fetch_assoc()['cnt'];
     echo "   Records: $count<br>";
 } else {
-    echo "❌ Tariffs table NOT FOUND<br>";
+    echo " Tariffs table NOT FOUND<br>";
     echo "<p><strong>To create it, visit:</strong> <a href='/UMS_Full_PHP_System/setup_tariffs.php'>/setup_tariffs.php</a></p>";
 }
 
 // 3. Check session
 echo "<h3>3. Session Status</h3>";
 if (isset($_SESSION['user_id'])) {
-    echo "✅ User logged in: " . htmlspecialchars($_SESSION['user_name'] ?? 'Unknown') . "<br>";
+    echo " User logged in: " . htmlspecialchars($_SESSION['user_name'] ?? 'Unknown') . "<br>";
     echo "   Role: " . htmlspecialchars($_SESSION['user_role'] ?? 'Unknown') . "<br>";
     
     if ($_SESSION['user_role'] === 'admin') {
-        echo "✅ Admin role verified<br>";
-        echo "<p><a href='/UMS_Full_PHP_System/tariffs.php' class='btn btn-primary'>👉 Go to Tariffs Page</a></p>";
+        echo " Admin role verified<br>";
+        echo "<p><a href='/UMS_Full_PHP_System/tariffs.php' class='btn btn-primary'> Go to Tariffs Page</a></p>";
     } else {
-        echo "❌ Not admin. Only admins can access tariffs.<br>";
+        echo " Not admin. Only admins can access tariffs.<br>";
     }
 } else {
-    echo "❌ Not logged in<br>";
-    echo "<p><a href='/UMS_Full_PHP_System/index.php' class='btn btn-primary'>👉 Go to Login</a></p>";
+    echo " Not logged in<br>";
+    echo "<p><a href='/UMS_Full_PHP_System/index.php' class='btn btn-primary'> Go to Login</a></p>";
 }
 
 // 4. Check utilities table
 echo "<h3>4. Utilities Table</h3>";
 $utResult = $mysqli->query("SELECT COUNT(*) as cnt FROM utilities");
 $utCount = $utResult->fetch_assoc()['cnt'];
-echo "✅ Utilities count: $utCount<br>";
+echo " Utilities count: $utCount<br>";
 
 // 5. Check header.php for tariffs link
 echo "<h3>5. Navigation Menu</h3>";
 $headerContent = file_get_contents('header.php');
 if (strpos($headerContent, 'tariffs.php') !== false) {
-    echo "✅ Tariffs link found in header.php<br>";
+    echo " Tariffs link found in header.php<br>";
 } else {
-    echo "⚠️ Tariffs link NOT in header.php<br>";
+    echo " Tariffs link NOT in header.php<br>";
 }
 
 echo "<hr>";

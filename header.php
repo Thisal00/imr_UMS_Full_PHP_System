@@ -1,7 +1,6 @@
 <?php
-// ========================================================
 // SESSION + LOGIN PROTECTION
-// ========================================================
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -10,14 +9,14 @@ if (empty($_SESSION['user_id'])) {
     exit;
 }
 
-// ========================================================
+
 // BASE URL
-// ========================================================
+
 $BASE_URL = "/UMS_Full_PHP_System";
 
-// ========================================================
+
 // DB CONNECTION
-// ========================================================
+
 require_once __DIR__ . "/db.php";
 
 // Detect current page file name (for active menu)
@@ -64,10 +63,10 @@ $profile_img = !empty($user['profile_image'])
 <!-- THEMES CSS (★ IMPORTANT) -->
 <link href="<?= $BASE_URL ?>/assets/css/themes.css" rel="stylesheet">
 
-<!-- THEME UTILITIES CSS (★ COLOR MATCHING) -->
+<!-- THEME UTILITIES CSS ( COLOR MATCHING tika) -->
 <link href="<?= $BASE_URL ?>/assets/css/theme-utilities.css" rel="stylesheet">
 
-<!-- ANIMATIONS CSS (★ PROFESSIONAL SMOOTH EFFECTS) -->
+<!-- ANIMATIONS CSS ( SMOOTH EFFECTS tika ) -->
 <link href="<?= $BASE_URL ?>/assets/css/animations.css" rel="stylesheet">
 
 <!-- Tailwind (disable preflight to avoid conflict) -->
@@ -97,7 +96,7 @@ tailwind = { config: { corePlugins: { preflight: false } } };
     })();
 </script>
 
-<!-- Chart.js (★ REQUIRED FOR DASHBOARD) -->
+<!-- Chart.js ( REQUIRED FOR DASHBOARD) -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
@@ -105,9 +104,9 @@ tailwind = { config: { corePlugins: { preflight: false } } };
 <!-- BODY WITH THEME ATTRIBUTE -->
 <body class="text-gray-900 theme-electric">
 
-<!-- ========================================================
+<!-- 
                      TOP NAVBAR
-======================================================== -->
+ -->
 <nav class="bg-gray-900 text-white shadow-sm sticky top-0 z-50">
     <div class="container-padded flex justify-between items-center h-14">
 
@@ -147,7 +146,7 @@ tailwind = { config: { corePlugins: { preflight: false } } };
                 </a>
             <?php endforeach; ?>
 
-            <!-- ★ THEME DROPDOWN -->
+            <!--  THEME DROPDOWN -->
             <div class="dropdown ms-2">
                 <button class="btn btn-outline-light btn-sm dropdown-toggle d-flex align-items-center"
                         type="button" data-bs-toggle="dropdown">

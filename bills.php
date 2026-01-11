@@ -3,14 +3,14 @@ require_once 'db.php';
 require_once 'auth.php';
 require_login();
 
-/* ============ FILTER INPUTS ============ */
+/*  FILTER INPUTS */
 $month   = (int)($_GET['month'] ?? 0);
 $year    = (int)($_GET['year'] ?? date('Y'));
 $utility = (int)($_GET['utility'] ?? 0);
 $status  = trim($_GET['status'] ?? '');
 $search  = trim($_GET['search'] ?? '');
 
-/* ============ WHERE CLAUSE ============ */
+/*  WHERE CLAUSE  */
 $where = "1=1";
 
 if ($month > 0)  $where .= " AND b.billing_month = $month";
@@ -29,7 +29,7 @@ if ($search !== '') {
                   OR m.meter_number LIKE '%$safe%')";
 }
 
-/* ============ BILL QUERY ============ */
+/*  BILL QUERY */
 $sql = "
 SELECT b.*, c.customer_code, c.full_name,
        m.meter_number,
