@@ -3,9 +3,9 @@ require_once 'db.php';
 require_once 'auth.php';
 require_login();
 
-/* 
+/* ============================
       LOAD REPORT DATA
- */
+============================= */
 $unpaid = $mysqli->query("
     SELECT *
     FROM v_unpaid_bills
@@ -127,9 +127,9 @@ include 'header.php';
     </h2>
 </div>
 
-<!-- 
+<!-- ============================
       KPI SECTION
-= -->
+============================= -->
 <div class="row mb-4">
 
     <div class="col-md-4">
@@ -158,9 +158,9 @@ include 'header.php';
 
 </div>
 
-<!-- 
+<!-- ============================
       REVENUE CHART
-= -->
+============================= -->
 <div class="card-glass">
   <div class="card-header" style="background: var(--accent); color: #fff;">
     <div>
@@ -174,9 +174,9 @@ include 'header.php';
 
 <div class="row">
 
-<!-- 
+<!-- ============================
       UNPAID BILLS TABLE
-= -->
+============================= -->
   <div class="col-md-6">
     <div class="card-glass">
       <div class="card-header" style="background: linear-gradient(135deg, #dc2626, #ef4444); color: #fff;">
@@ -222,9 +222,9 @@ include 'header.php';
     </div>
   </div>
 
-<!-- 
+<!-- ============================
       MONTHLY REVENUE TABLE
-= -->
+============================= -->
   <div class="col-md-6">
     <div class="card-glass">
       <div class="card-header" style="background: linear-gradient(135deg, #059669, #10b981); color: #fff;">
@@ -275,9 +275,9 @@ include 'header.php';
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-// 
+// ===============================
 //      REVENUE CHART JS
-// 
+// ===============================
 const ctx = document.getElementById('revenueChart');
 
 new Chart(ctx, {

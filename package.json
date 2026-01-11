@@ -1,0 +1,15 @@
+{
+  "name": "ums-full-php-system",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Utility Management System frontend build (TailwindCSS)",
+  "scripts": {
+    "build": "tailwindcss -i ./assets/css/input.css -o ./assets/css/app.css --minify",
+    "dev": "tailwindcss -i ./assets/css/input.css -o ./assets/css/app.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.14",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47"
+  }
+}

@@ -1,4 +1,6 @@
-
+/* =====================================================
+   GLOBAL PAGE STYLING
+===================================================== */
 body {
     background: #f3f4f6;
     font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
@@ -12,7 +14,9 @@ body {
     to   { opacity: 1; transform: translateY(0); }
 }
 
-
+/* =====================================================
+   PROFILE MAIN CARD
+===================================================== */
 .profile-box, .edit-box, .password-box {
     max-width: 900px;
     margin: 40px auto;
@@ -24,7 +28,9 @@ body {
     animation: fadeIn 0.5s ease-in-out;
 }
 
-
+/* =====================================================
+   PROFILE IMAGE
+===================================================== */
 .profile-img {
     width: 170px;
     height: 170px;
@@ -39,7 +45,9 @@ body {
     box-shadow: 0 8px 30px rgba(0,0,0,0.25);
 }
 
-
+/* =====================================================
+   TITLES
+===================================================== */
 .section-title {
     font-size: 18px;
     font-weight: 700;
@@ -50,7 +58,9 @@ body {
     padding-bottom: 6px;
 }
 
-
+/* =====================================================
+   TABLE STYLING
+===================================================== */
 .table-custom {
     width: 100%;
     border-radius: 12px;
@@ -78,6 +88,9 @@ body {
     transition: 0.25s ease-in-out;
 }
 
+/* =====================================================
+   BUTTONS
+===================================================== */
 .btn-custom {
     padding: 8px 20px;
     font-size: 14px;
@@ -114,7 +127,9 @@ body {
     background: #e5e7eb;
 }
 
-
+/* =====================================================
+   FORMS (Edit & Password Page)
+===================================================== */
 .form-control {
     border-radius: 10px !important;
     padding: 10px 14px;
@@ -126,7 +141,9 @@ body {
     box-shadow: 0 0 0 2px rgba(37,99,235,0.25);
 }
 
-
+/* =====================================================
+   DEVICE INFO BOX
+===================================================== */
 .device-info-box {
     border-radius: 12px;
     border: 1px solid #e5e7eb;
@@ -134,7 +151,9 @@ body {
     background: #f9fafb;
 }
 
-
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 @media (max-width: 600px) {
     .profile-box, .edit-box, .password-box {
         padding: 25px;

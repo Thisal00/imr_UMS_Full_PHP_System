@@ -9,13 +9,13 @@ $bill_id     = (int)($_POST['bill_id'] ?? 0);
 $paid_amount = (float)($_POST['amount_paid'] ?? 0);
 $pay_date    = date("Y-m-d");
 
-// VALIDATION
+// --------------- VALIDATION ----------------
 if ($bill_id <= 0 || $paid_amount <= 0) {
     header("Location: ../payments.php?err=1");
     exit;
 }
 
-// GET CURRENT BILL DATA 
+// ---- GET CURRENT BILL DATA ----
 $bill = $mysqli->query("
     SELECT b.*, c.full_name, c.email, m.meter_number, u.name AS utility_name
     FROM bills b
@@ -31,7 +31,7 @@ if (!$bill) {
     exit;
 }
 
-//  UPDATE PAYMENT 
+// ---- UPDATE PAYMENT ----
 
 $new_outstanding = $bill['total_amount'] - $paid_amount;
 
@@ -47,7 +47,7 @@ $upd->bind_param("dddi", $paid_amount, $new_outstanding, $paid_amount, $bill_id)
 $upd->execute();
 $upd->close();
 
-//  GENERATE RECEIPT PDF
+// ---------------- GENERATE RECEIPT PDF ----------------
 
 $pdf_file = "../temp/receipt_" . $bill_id . ".pdf";
 
@@ -59,7 +59,7 @@ $mpdf = new \Mpdf\Mpdf();
 $mpdf->WriteHTML($html);
 $mpdf->Output($pdf_file, "F");
 
-//  SEND EMAIL 
+// ---------------- SEND EMAIL ----------------
 
 if (!empty($bill['email'])) {
 
@@ -84,9 +84,9 @@ if (!empty($bill['email'])) {
     sendBillEmail($bill['email'], $subject, $body, $pdf_file);
 }
 
+// ---------------- REDIRECT ----------------
 
 header("Location: ../payments.php?ok=1");
 exit;
 
 ?>
-

@@ -1,4 +1,11 @@
+/* =====================================================
+   THEME UTILITIES - COMPREHENSIVE COLOR MATCHING
+   Ensures all 3 themes (Electric, Pastel, Glass) work perfectly
+===================================================== */
 
+/* =====================================================
+   GLOBAL TEXT COLOR INHERITANCE
+===================================================== */
 * {
     color: inherit;
 }
@@ -7,7 +14,9 @@ p, span, div, label, small, strong, em {
     color: var(--card-text);
 }
 
-
+/* =====================================================
+   CARD & CONTAINER STYLING
+===================================================== */
 .card,
 .card-glass,
 .modal-content,
@@ -30,6 +39,9 @@ p, span, div, label, small, strong, em {
     color: inherit !important;
 }
 
+/* =====================================================
+   TABLE COMPREHENSIVE STYLING
+===================================================== */
 .table {
     background: transparent !important;
     color: var(--card-text) !important;
@@ -80,6 +92,9 @@ p, span, div, label, small, strong, em {
     background: var(--table-body-bg) !important;
 }
 
+/* =====================================================
+   GLASS THEME SPECIFIC TABLE ENHANCEMENTS
+===================================================== */
 body.theme-glass .table thead th {
     background: rgba(30,41,59,0.95) !important;
     color: #e2e8f0 !important;
@@ -115,7 +130,9 @@ body.theme-glass .table tbody tr:hover td {
     color: #f1f5f9 !important;
 }
 
-
+/* =====================================================
+   FORM CONTROLS
+===================================================== */
 .form-control,
 .form-select,
 input,
@@ -164,7 +181,9 @@ body.theme-glass textarea:focus {
     box-shadow: 0 0 0 3px rgba(56,189,248,0.25) !important;
 }
 
-
+/* =====================================================
+   BUTTON STYLING
+===================================================== */
 .btn {
     font-weight: 600 !important;
     transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -230,7 +249,9 @@ body.theme-glass .btn-dark {
     box-shadow: 0 10px 25px rgba(30,41,59,0.4);
 }
 
-
+/* =====================================================
+   BADGE STYLING
+===================================================== */
 .badge {
     font-weight: 600 !important;
     padding: 6px 12px !important;
@@ -272,6 +293,9 @@ body.theme-glass .badge.bg-secondary {
     box-shadow: 0 4px 12px rgba(100,116,139,0.4);
 }
 
+/* =====================================================
+   DROPDOWN STYLING
+===================================================== */
 .dropdown-menu {
     background: var(--card-bg) !important;
     border: 1px solid var(--card-border) !important;
@@ -297,7 +321,9 @@ body.theme-glass .dropdown-item:hover {
     color: #f1f5f9 !important;
 }
 
-
+/* =====================================================
+   ALERT STYLING
+===================================================== */
 body.theme-glass .alert {
     background: rgba(15,23,42,0.9) !important;
     border: 1px solid rgba(100,116,139,0.4) !important;
@@ -325,7 +351,9 @@ body.theme-glass .alert-info {
     background: rgba(8,51,68,0.7) !important;
 }
 
-
+/* =====================================================
+   NAVIGATION STYLING
+===================================================== */
 nav.bg-gray-900,
 .navbar {
     background: var(--nav-bg) !important;
@@ -340,7 +368,9 @@ body.theme-glass .navbar {
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-
+/* =====================================================
+   PAGE HEADER STYLING
+===================================================== */
 .page-header h2,
 .page-header h1 {
     color: var(--card-text) !important;
@@ -352,7 +382,9 @@ body.theme-glass .page-header h1 {
     text-shadow: 0 4px 15px rgba(56,189,248,0.3);
 }
 
-
+/* =====================================================
+   KPI CARD STYLING
+===================================================== */
 .kpi-glass {
     color: #ffffff !important;
     border-radius: 20px;
@@ -445,6 +477,9 @@ body.theme-glass .kpi-glass:hover {
                 inset 0 2px 0 rgba(255,255,255,0.2);
 }
 
+/* =====================================================
+   CARD GLASS STYLING
+===================================================== */
 .card-glass {
     border-radius: 20px;
     background: var(--card-bg);
@@ -485,7 +520,9 @@ body.theme-glass .kpi-glass:hover {
     color: #ffffff !important;
 }
 
-
+/* =====================================================
+   UTILITY TEXT COLORS
+===================================================== */
 .text-primary { color: var(--accent) !important; }
 .text-success { color: var(--badge-success) !important; }
 .text-danger { color: var(--badge-danger) !important; }
@@ -494,6 +531,9 @@ body.theme-glass .text-primary { color: #38bdf8 !important; }
 body.theme-glass .text-success { color: #10b981 !important; }
 body.theme-glass .text-danger { color: #f43f5e !important; }
 
+/* =====================================================
+   SCROLLBAR STYLING
+===================================================== */
 .table-responsive::-webkit-scrollbar {
     width: 10px;
     height: 10px;
@@ -518,7 +558,9 @@ body.theme-glass .table-responsive::-webkit-scrollbar-thumb {
     box-shadow: 0 0 10px rgba(56,189,248,0.5);
 }
 
-
+/* =====================================================
+   CHART STYLING
+===================================================== */
 .chart-wrap canvas {
     background: transparent !important;
 }

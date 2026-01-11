@@ -116,4 +116,3 @@ include '../header.php';
 <script src="js_handlers.js"></script>
 
 <?php include '../footer.php'; ?>
-

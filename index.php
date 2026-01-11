@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Role-based redirect
         switch ($user['role']) {
             case 'admin':
-                header("Location: customers.php");
+                header("Location: dashboard.php");
                 break;
 
             case 'cashier':
@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 break;
 
             default:
-                header("Location: readings.php");
+                header("Location: 4readings.php");
         }
         exit;
     }
@@ -128,4 +128,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 </body>
 </html>
-

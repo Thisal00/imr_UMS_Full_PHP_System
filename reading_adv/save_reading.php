@@ -2,9 +2,11 @@
 require_once '../db.php';
 require_once '../auth.php';
 require_login();
-require_once '../send_mail.php';   
+require_once '../send_mail.php';   // your email sender file
 
-/*READ INPUTS */
+/* ======================
+   READ INPUTS
+====================== */
 $meter_id   = (int)($_POST['meter_id'] ?? 0);
 $prev       = (float)($_POST['previous_reading'] ?? 0);
 $curr       = (float)($_POST['current_reading'] ?? 0);
@@ -12,7 +14,9 @@ $date       = trim($_POST['reading_date'] ?? '');
 $tariff_id  = (int)($_POST['tariff_id'] ?? 0);
 $due_days   = (int)($_POST['due_days'] ?? 14);
 
-/* BASIC VALIDATION */
+/* ======================
+   BASIC VALIDATION
+====================== */
 if ($meter_id === 0 || $tariff_id === 0 || !$date || $curr < $prev) {
     header("Location: ../readings.php?err=1");
     exit;
@@ -22,7 +26,9 @@ $bm = (int)date('m', strtotime($date));
 $by = (int)date('Y', strtotime($date));
 $units = $curr - $prev;
 
-/* INSERT READING */
+/* ======================
+   INSERT READING
+====================== */
 $stmt = $mysqli->prepare("
     INSERT INTO meter_readings
     (meter_id, reading_date, previous_reading, current_reading, units_used, billing_month, billing_year)
@@ -41,7 +47,9 @@ if (!$stmt->execute()) {
 $reading_id = $stmt->insert_id;
 $stmt->close();
 
-/* CALL STORED PROCEDURE */
+/* ======================
+   CALL STORED PROCEDURE
+====================== */
 $sp = $mysqli->prepare("CALL sp_generate_bill(?,?,?)");
 
 if (!$sp) {
@@ -61,7 +69,9 @@ if (!$sp->execute()) {
 
 $sp->close();
 
-/* GET BILL DETAILS FOR EMAIL */
+/* ======================
+   GET BILL DETAILS FOR EMAIL
+====================== */
 $bill = $mysqli->query("
     SELECT b.*, c.full_name, c.email, c.customer_code,
            m.meter_number, u.name AS utility_name
@@ -75,7 +85,9 @@ $bill = $mysqli->query("
 
 if ($bill && !empty($bill['email'])) {
 
-    /* EMAIL TEMPLATE */
+    /* ======================
+       EMAIL TEMPLATE
+    ====================== */
 
     $subject = "Your Utility Bill – Please Pay Before Due Date";
 
@@ -135,7 +147,9 @@ if ($bill && !empty($bill['email'])) {
     sendMail($bill['email'], $subject, $body);
 }
 
-/* SUCCESS REDIRECT */
+/* ======================
+   SUCCESS REDIRECT
+====================== */
 header("Location: ../readings.php?ok=1");
 exit;
 

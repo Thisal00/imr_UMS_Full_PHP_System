@@ -3,9 +3,9 @@ require_once 'db.php';
 require_once 'auth.php';
 require_login();
 
-/* 
+/* ============================
    KPI CARDS
- */
+============================ */
 $total_customers = $mysqli->query("SELECT COUNT(*) c FROM customers")
     ->fetch_assoc()['c'] ?? 0;
 
@@ -18,9 +18,9 @@ $unpaid_bills = $mysqli->query("SELECT COUNT(*) c FROM bills WHERE outstanding >
 $total_revenue = $mysqli->query("SELECT COALESCE(SUM(amount_paid),0) s FROM bills")
     ->fetch_assoc()['s'] ?? 0;
 
-/* 
+/* ============================
    MONTHLY REVENUE (VIEW)
- */
+============================ */
 $revRes = $mysqli->query("
     SELECT billing_year, billing_month, total_collected
     FROM v_monthly_revenue
@@ -33,9 +33,9 @@ while ($r = $revRes->fetch_assoc()) {
     $rev_data[]   = (float)$r['total_collected'];
 }
 
-/* 
+/* ============================
    MONTHLY UNITS (FROM bills)
- */
+============================ */
 $unitRes = $mysqli->query("
     SELECT billing_year, billing_month, SUM(units) AS total_units
     FROM bills
@@ -49,9 +49,9 @@ while ($u = $unitRes->fetch_assoc()) {
     $unit_data[]   = (float)$u['total_units'];
 }
 
-/* 
+/* ============================
    DAILY COLLECTION (THIS MONTH)
- */
+============================ */
 $curYear  = (int)date('Y');
 $curMonth = (int)date('m');
 
@@ -70,9 +70,9 @@ while ($d = $dayRes->fetch_assoc()) {
     $day_data[]   = (float)$d['s'];
 }
 
-/* 
+/* ============================
    CUSTOMER GROWTH (BY DATE)
- */
+============================ */
 $custRes = $mysqli->query("
     SELECT DATE(created_at) d, COUNT(*) c
     FROM customers
@@ -86,9 +86,9 @@ while ($c = $custRes->fetch_assoc()) {
     $cust_data[]   = (int)$c['c'];
 }
 
-/* 
+/* ============================
    CUSTOMER TYPE DISTRIBUTION
- */
+============================ */
 $typeRes = $mysqli->query("
     SELECT type, COUNT(*) c
     FROM customers
@@ -101,9 +101,9 @@ while ($t = $typeRes->fetch_assoc()) {
     $type_data[]   = (int)$t['c'];
 }
 
-/* 
+/* ============================
    UNPAID BILLS BY TARIFF
- */
+============================ */
 $unpaidRes = $mysqli->query("
     SELECT tariff_id, COUNT(*) c
     FROM bills
@@ -117,9 +117,9 @@ while ($u = $unpaidRes->fetch_assoc()) {
     $tariff_data[]   = (int)$u['c'];
 }
 
-/* 
+/* ============================
    METER STATUS (ACTIVE / INACTIVE)
- */
+============================ */
 $meterRes = $mysqli->query("
     SELECT status, COUNT(*) c
     FROM meters
@@ -132,9 +132,9 @@ while ($m = $meterRes->fetch_assoc()) {
     $meter_data[]   = (int)$m['c'];
 }
 
-/* 
+/* ============================
    PAYMENT METHODS
- */
+============================ */
 $payRes = $mysqli->query("
     SELECT method, COUNT(*) c
     FROM payments
@@ -256,7 +256,7 @@ include 'header.php';
 </div>
 
 <script>
-//  DATA FROM PHP 
+// ===== DATA FROM PHP =====
 const revLabels     = <?= json_encode($rev_labels) ?>;
 const revData       = <?= json_encode($rev_data) ?>;
 const unitLabels    = <?= json_encode($unit_labels) ?>;

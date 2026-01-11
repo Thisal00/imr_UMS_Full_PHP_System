@@ -13,7 +13,7 @@ if ($id <= 0) {
 }
 
 try {
-    // Delete bill first
+    // Delete bill first (to avoid FK errors)
     $mysqli->query("DELETE FROM bills WHERE reading_id = $id");
 
     // Delete reading

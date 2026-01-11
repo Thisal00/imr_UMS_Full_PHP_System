@@ -2,7 +2,7 @@
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
 
-require __DIR__ . "/vendor/autoload.php";   
+require __DIR__ . "/vendor/autoload.php";   // Composer autoload
 
 function sendBillEmail($to, $subject, $body, $attachmentPath = null)
 {
@@ -11,7 +11,7 @@ function sendBillEmail($to, $subject, $body, $attachmentPath = null)
     try {
 
         $mail->isSMTP();
-        $mail->Host       = 'smtp.gmail.com'; 
+        $mail->Host       = 'smtp.gmail.com'; // use your SMTP server
         $mail->SMTPAuth   = true;
         $mail->Username = "thisalchathnuka80@gmail.com"; 
         $mail->Password = "zcpv fwss ykyv cnod ";

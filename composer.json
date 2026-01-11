@@ -1,1 +1,6 @@
-
+{
+    "require": {
+        "phpmailer/phpmailer": "^7.0",
+        "mpdf/mpdf": "^6.1"
+    }
+}

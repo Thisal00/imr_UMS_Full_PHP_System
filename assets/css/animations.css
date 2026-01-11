@@ -1,4 +1,11 @@
+/* =====================================================
+   PROFESSIONAL ANIMATIONS & SMOOTH TRANSITIONS
+   Ultra-Smooth Glass Theme Compatible
+===================================================== */
 
+/* =====================================================
+   PROFESSIONAL ICON SIZE SYSTEM
+===================================================== */
 .page-header h2 i,
 .page-header h1 i {
     font-size: 2.25rem;
@@ -44,6 +51,9 @@
     font-size: 1rem;
 }
 
+/* =====================================================
+   SMOOTH BASE TRANSITIONS
+===================================================== */
 * {
     transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -63,7 +73,9 @@ body {
     }
 }
 
-
+/* =====================================================
+   GLASS MORPHISM ENHANCEMENTS
+===================================================== */
 .card,
 .card-glass,
 .modal-content,
@@ -82,6 +94,9 @@ body {
     box-shadow: 0 28px 65px rgba(15, 23, 42, 0.35) !important;
 }
 
+/* =====================================================
+   BUTTON ANIMATIONS
+===================================================== */
 .btn,
 button,
 .action-btn,
@@ -123,7 +138,9 @@ button:active::before {
     transition: transform 0s, opacity 0.3s;
 }
 
-
+/* =====================================================
+   TABLE ANIMATIONS
+===================================================== */
 .table {
     animation: slideInUp 0.5s ease-out;
 }
@@ -153,7 +170,9 @@ button:active::before {
     color: inherit !important;
 }
 
-
+/* =====================================================
+   BADGE ANIMATIONS
+===================================================== */
 .badge {
     animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     transition: all 0.3s ease;
@@ -186,7 +205,9 @@ body.theme-glass .badge:hover {
                 0 0 15px rgba(56, 189, 248, 0.3);
 }
 
-
+/* =====================================================
+   ICON ANIMATIONS
+===================================================== */
 i,
 .bi {
     transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -214,7 +235,9 @@ a:hover i {
     filter: drop-shadow(0 0 8px rgba(220, 53, 69, 0.6));
 }
 
-
+/* =====================================================
+   KPI CARD GLOW EFFECTS
+===================================================== */
 .kpi-glass {
     position: relative;
     animation: fadeInScale 0.7s cubic-bezier(0.4, 0, 0.2, 1);
@@ -267,7 +290,9 @@ a:hover i {
     }
 }
 
-
+/* =====================================================
+   FORM INPUT ANIMATIONS
+===================================================== */
 .form-control,
 .form-select,
 textarea,
@@ -284,7 +309,9 @@ input:focus {
     border-color: var(--accent, #4f46e5);
 }
 
-
+/* =====================================================
+   MODAL ANIMATIONS
+===================================================== */
 .modal.show .modal-dialog {
     animation: modalSlideDown 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -304,7 +331,9 @@ input:focus {
     backdrop-filter: blur(25px) saturate(150%);
 }
 
-
+/* =====================================================
+   ALERT ANIMATIONS
+===================================================== */
 .alert {
     animation: alertSlideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -320,7 +349,9 @@ input:focus {
     }
 }
 
-
+/* =====================================================
+   CHART CONTAINER ANIMATIONS
+===================================================== */
 .chart-wrap,
 canvas {
     animation: chartFadeIn 0.8s ease-out;
@@ -337,6 +368,9 @@ canvas {
     }
 }
 
+/* =====================================================
+   DROPDOWN ANIMATIONS
+===================================================== */
 .dropdown-menu {
     animation: dropdownFadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     backdrop-filter: blur(20px) saturate(140%);
@@ -363,6 +397,9 @@ canvas {
     color: #fff !important;
 }
 
+/* =====================================================
+   LOADING SPINNER (IF NEEDED)
+===================================================== */
 .spinner-wrapper {
     animation: spin 1.2s linear infinite;
 }
@@ -372,7 +409,9 @@ canvas {
     to { transform: rotate(360deg); }
 }
 
-
+/* =====================================================
+   NAVBAR SMOOTH ANIMATIONS
+===================================================== */
 nav,
 .navbar {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -390,7 +429,9 @@ nav a:hover,
     text-shadow: 0 4px 12px rgba(255, 255, 255, 0.4);
 }
 
-
+/* =====================================================
+   GLASS THEME SPECIFIC GLOW EFFECTS
+===================================================== */
 body.theme-glass .card-glass,
 body.theme-glass .kpi-glass,
 body.theme-glass .card {
@@ -481,7 +522,9 @@ body.theme-glass .form-select:focus {
                 0 8px 20px rgba(56, 189, 248, 0.2) !important;
 }
 
-
+/* =====================================================
+   SEARCH/FILTER SMOOTH ANIMATIONS
+===================================================== */
 form.d-flex,
 form {
     animation: formSlideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -498,14 +541,18 @@ form {
     }
 }
 
-
+/* =====================================================
+   STAGGERED FADE IN FOR ROWS
+===================================================== */
 .table tbody tr:nth-child(1) { animation-delay: 0.05s; }
 .table tbody tr:nth-child(2) { animation-delay: 0.1s; }
 .table tbody tr:nth-child(3) { animation-delay: 0.15s; }
 .table tbody tr:nth-child(4) { animation-delay: 0.2s; }
 .table tbody tr:nth-child(5) { animation-delay: 0.25s; }
 
-
+/* =====================================================
+   PROFESSIONAL SCROLL ANIMATIONS
+===================================================== */
 .table-responsive {
     scroll-behavior: smooth;
 }
@@ -530,6 +577,9 @@ form {
     background: var(--accent, #3730a3);
 }
 
+/* =====================================================
+   UTILITY CLASSES FOR SMOOTH EFFECTS
+===================================================== */
 .fade-in {
     animation: fadeIn 0.6s ease-out;
 }
@@ -584,7 +634,9 @@ form {
     }
 }
 
-
+/* =====================================================
+   PROFESSIONAL TEXT GLOW EFFECTS
+===================================================== */
 h1, h2, h3, h4, h5, h6 {
     transition: all 0.3s ease;
 }
@@ -616,7 +668,9 @@ body.theme-glass .kpi-value {
     text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
 }
 
-
+/* =====================================================
+   PROFESSIONAL LINK HOVER EFFECTS
+===================================================== */
 a {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }

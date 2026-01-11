@@ -1,0 +1,26 @@
+[
+    {
+        "id": "2",
+        "name": "thisal",
+        "email": "thisalchathnuka@gmail.com",
+        "role": "admin",
+        "status": "active",
+        "updated_at": "2025-12-03 16:35:14"
+    },
+    {
+        "id": "6",
+        "name": "henuka",
+        "email": "henukapathirana2@gmail.com",
+        "role": "admin",
+        "status": "active",
+        "updated_at": "2025-12-03 18:40:18"
+    },
+    {
+        "id": "9",
+        "name": "Banuka",
+        "email": "cnukathisal@gamil.com",
+        "role": "reader",
+        "status": "active",
+        "updated_at": "2026-01-07 04:45:42"
+    }
+]

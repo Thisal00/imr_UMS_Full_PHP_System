@@ -10,9 +10,9 @@ if ($id <= 0) {
     die("Invalid user ID");
 }
 
-
+// PREVENT SELF RESET BLOCK (OPTIONAL)
 if ($id == $_SESSION['user_id']) {
-    
+    // You can remove this if you want admin to reset own password
 }
 
 // RESET PASSWORD

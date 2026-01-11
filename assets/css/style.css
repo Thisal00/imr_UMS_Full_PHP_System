@@ -1,4 +1,6 @@
-
+/* ============================================
+   GLOBAL SYSTEM STYLES – UMS v2.0
+============================================ */
 :root {
     --bg-light: #f5f7fa;
     --card-bg: #ffffff;
@@ -21,7 +23,9 @@ body {
     padding-bottom: 40px;
 }
 
-
+/* ============================================
+   MAIN CARDS
+============================================ */
 .card-ums {
     background: var(--card-bg);
     border-radius: var(--radius);
@@ -55,7 +59,9 @@ body {
     margin-top: 5px;
 }
 
-
+/* ============================================
+   CHART CONTAINER FIX (IMPORTANT!)
+============================================ */
 .chart-wrap {
     position: relative;
     width: 100%;
@@ -67,6 +73,9 @@ canvas {
     height: 350px !important;
 }
 
+/* ============================================
+   PROFILE & TABLES
+============================================ */
 .profile-box {
     max-width: 900px;
     margin: auto;
@@ -102,6 +111,9 @@ canvas {
     font-weight: 500;
 }
 
+/* ============================================
+   ANIMATIONS
+============================================ */
 .fade-in {
     animation: fadeIn 0.5s ease-in-out;
 }

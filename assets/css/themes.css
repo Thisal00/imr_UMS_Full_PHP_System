@@ -208,7 +208,9 @@ body.theme-glass .table tbody tr:hover td {
     margin-right: 0.5rem;
 }
 
-
+/* =============================
+   Glass-specific frosted accents
+============================= */
 body.theme-glass::before {
     content: "";
     position: fixed;

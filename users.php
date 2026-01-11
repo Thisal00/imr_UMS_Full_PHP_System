@@ -5,7 +5,9 @@ require_once __DIR__ . "/db.php";
 
 $msg = "";
 
-
+/* ===========================
+   ADD NEW USER
+=========================== */
 if (isset($_POST['add_user'])) {
 
     $full_name = trim($_POST['full_name']);
@@ -14,7 +16,7 @@ if (isset($_POST['add_user'])) {
     $status    = trim($_POST['status']);
     $password  = trim($_POST['password']);
 
-    
+    // Secure hash
     $hash = password_hash($password, PASSWORD_DEFAULT);
 
     $stmt = $mysqli->prepare("
@@ -45,7 +47,7 @@ $users = $mysqli->query("SELECT * FROM users ORDER BY id DESC");
 <div class="alert alert-success"><?= $msg ?></div>
 <?php endif; ?>
 
-
+<!-- ADD USER PANEL -->
 <div class="card card-glass mb-4">
 
 <h4 class="mb-3"><i class="bi bi-person-plus text-primary"></i> Add New User</h4>
@@ -93,7 +95,7 @@ $users = $mysqli->query("SELECT * FROM users ORDER BY id DESC");
 </form>
 </div>
 
-
+<!-- USERS TABLE -->
 <div class="card card-glass">
 
 <h4 class="mb-3"><i class="bi bi-people"></i> All Users</h4>

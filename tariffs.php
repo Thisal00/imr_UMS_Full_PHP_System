@@ -31,16 +31,9 @@ while ($util = $utilities_query->fetch_assoc()) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tariffs Management - UMS</title>
-    <?php include 'header.php'; ?>
-</head>
-<body>
-    <div class="container-fluid py-4" style="margin-top: 80px;">
+<?php include 'header.php'; ?>
+
+    <div class="container-fluid py-4">
         <!-- Page Header -->
         <div class="page-header mb-4">
             <div class="d-flex justify-content-between align-items-center">
@@ -91,11 +84,11 @@ while ($util = $utilities_query->fetch_assoc()) {
                                 </td>
                                 <td>
                                     <span class="badge" style="background: rgba(34,197,94,0.2); color: #22c55e; padding: 6px 12px; border-radius: 8px;">
-                                        PKR <?= number_format($tariff['price_per_unit'], 2) ?>
+                                        Rs <?= number_format($tariff['price_per_unit'], 2) ?>
                                     </span>
                                 </td>
                                 <td>
-                                    PKR <?= number_format($tariff['fixed_charge'], 2) ?>
+                                    Rs <?= number_format($tariff['fixed_charge'], 2) ?>
                                 </td>
                                 <td>
                                     <?php if ($tariff['is_active']): ?>
@@ -259,7 +252,6 @@ while ($util = $utilities_query->fetch_assoc()) {
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
     // Add Tariff
     document.getElementById('addTariffForm').addEventListener('submit', function(e) {
@@ -415,5 +407,7 @@ while ($util = $utilities_query->fetch_assoc()) {
         box-shadow: 0 6px 25px rgba(59,130,246,0.5) !important;
     }
     </style>
-</body>
-</html>
+
+</div>
+
+<?php include 'footer.php'; ?>
