@@ -14,9 +14,7 @@ require_once 'send_mail.php'; // email sender
 
 $msg = '';
 
-/* ============================
-      LOAD OUTSTANDING BILLS
-============================= */
+/* LOAD OUTSTANDING BILLS */
 $bills = $mysqli->query("
     SELECT b.id, c.customer_code, c.full_name, 
            b.billing_year, b.billing_month, 
@@ -27,9 +25,7 @@ $bills = $mysqli->query("
     ORDER BY b.billing_year DESC, b.billing_month DESC
 ");
 
-/* ============================
-         SAVE PAYMENT
-============================= */
+/* SAVE PAYMENT */
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $bill_id = (int)($_POST['bill_id'] ?? 0);
@@ -49,9 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($stmt->execute()) {
 
-            /* ===============================
-               UPDATE TOTAL PAID + OUTSTANDING
-            =============================== */
+            /* UPDATE TOTAL PAID + OUTSTANDING */
             $mysqli->query("
                 UPDATE bills b
                 SET amount_paid = (
