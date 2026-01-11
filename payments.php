@@ -63,9 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 WHERE b.id = $bill_id
             ");
 
-            /* ===============================
-               GET BILL + CUSTOMER FOR EMAIL
-            =============================== */
+            /* GET BILL + CUSTOMER FOR EMAIL */
             $bill = $mysqli->query("
                 SELECT b.*, c.full_name, c.email
                 FROM bills b
@@ -74,9 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 LIMIT 1
             ")->fetch_assoc();
 
-            /* ===============================
-                 UPDATE BILL STATUS
-            =============================== */
+            /*  UPDATE BILL STATUS */
             $status = 'Pending';
             if ($bill['amount_paid'] >= $bill['total_amount']) $status = 'Paid';
             elseif ($bill['amount_paid'] > 0) $status = 'Partially Paid';
@@ -86,9 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $mysqli->query("UPDATE bills SET status='$status' WHERE id=$bill_id");
 
-            /* ===============================
-                       SEND EMAIL
-            =============================== */
+            /*  SEND EMAIL*/
             if (!empty($bill['email'])) {
 
                 $subject = "Payment Confirmation - Bill #{$bill['id']}";
@@ -122,9 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-/* ============================
-        RECENT PAYMENTS
-============================= */
+/* RECENT PAYMENTS*/
 $plist = $mysqli->query("
     SELECT p.*, c.customer_code, c.full_name
     FROM payments p
